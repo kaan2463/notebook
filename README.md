@@ -2,3 +2,4 @@
 Notebook
 - Some personal infos
 - my freetime pastel works :)
+ will be continuously updated
