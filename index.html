@@ -49,69 +49,15 @@
 				</div>
 			</section>
 
-			<!-- Two 
-			<section id="two" class="wrapper style2">
+			<section id="two" class="wrapper style1">
 				<header>
-					<h2>Vestibulum Convallis</h2>
-					<p>vehicula urna sed justo bibendum</p>
+					<h2>My Art Workouts</h2>
+					<p>Pastel Works</p>
 				</header>
-				<div class="content">
-					<div class="gallery">
-						<div>
-							<div class="image fit flush">
-								<a href="images/pic03.jpg"><img src="images/pic03.jpg" alt="" /></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit flush">
-								<a href="images/pic01.jpg"><img src="images/pic01.jpg" alt="" /></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit flush">
-								<a href="images/pic04.jpg"><img src="images/pic04.jpg" alt="" /></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit flush">
-								<a href="images/pic05.jpg"><img src="images/pic05.jpg" alt="" /></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+				<div id="artGallery" class="gallery">
 
-			
-			<section id="three" class="wrapper">
-				<div class="spotlight">
-					<div class="image flush"><img src="images/pic06.jpg" alt="" /></div>
-					<div class="inner">
-						<h3>Viverra Hendrerit</h3>
-						<p>Curabitur eget semper ante. Morbi eleifend ultricies est, a blandit diam vehicula vel.
-							Vestibulum porttitor nisi quis viverra hendrerit. Suspendisse vel volutpat nibh, vel
-							elementum lacus. Maecenas commodo pulvinar dui, at cursus metus imperdiet vel.</p>
-					</div>
-				</div>
-				<div class="spotlight alt">
-					<div class="image flush"><img src="images/pic07.jpg" alt="" /></div>
-					<div class="inner">
-						<h3>Curabitur Eget</h3>
-						<p>Curabitur eget semper ante. Morbi eleifend ultricies est, a blandit diam vehicula vel.
-							Vestibulum porttitor nisi quis viverra hendrerit. Suspendisse vel volutpat nibh, vel
-							elementum lacus. Maecenas commodo pulvinar dui, at cursus metus imperdiet vel.</p>
-					</div>
-				</div>
-				<div class="spotlight">
-					<div class="image flush"><img src="images/pic08.jpg" alt="" /></div>
-					<div class="inner">
-						<h3>Morbi Eleifend</h3>
-						<p>Curabitur eget semper ante. Morbi eleifend ultricies est, a blandit diam vehicula vel.
-							Vestibulum porttitor nisi quis viverra hendrerit. Suspendisse vel volutpat nibh, vel
-							elementum lacus. Maecenas commodo pulvinar dui, at cursus metus imperdiet vel.</p>
-					</div>
 				</div>
 			</section>
-		-->
 		</div>
 	</section>
 
@@ -140,6 +86,37 @@
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	<script>
+		var artGallery = $('#artGallery');
+
+		var quotes = [
+			"I think that little by little I'll be able to solve my problems and survive. Frida Kahlo",
+			"Fear does not have any special power unless you empower it by submitting to it. Les Brown",
+			"It is easier to get forgiveness than permission. -",
+			"Behind every successful man is a surprised woman.",
+			"Art is the most intense mode of individualism that the world has known. Oscar Wilde",
+			"There is always danger for those who are afraid of it. George Bernard Shaw",
+			"Whoever angers you, conquers you. Elizabeth Kenny"
+		];
+
+		for (i = 0; i < 7; i++) {
+			var classString = i % 2 == 0 ? '<div class="spotlight">' : '<div class="spotlight alt">';
+			var quote = quotes[i];
+
+
+			var htmlString =
+				classString +
+				'<div class="image flush"><a href="art/' + i + '.jpg"><img src="art/' + i + '.jpg" alt="" /></a></div> ' +
+				'<div class="inner">' +
+				'<h3>' + quote + '</h3> ' +
+				'</div>' +
+				'</div>';
+			artGallery.append(htmlString);
+
+		}
+
+	</script>
 
 </body>
 

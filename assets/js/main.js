@@ -4,7 +4,7 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
-(function($) {
+(function ($) {
 
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
@@ -14,31 +14,31 @@
 		xsmall: '(max-width: 480px)'
 	});
 
-	$(function() {
+	$(function () {
 
-		var	$window 	= $(window),
-			$body 		= $('body'),
-			$header 	= $('#header');
+		var $window = $(window),
+			$body = $('body'),
+			$header = $('#header');
 
 		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
+		$body.addClass('is-loading');
 
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 100);
-			});
+		$window.on('load', function () {
+			window.setTimeout(function () {
+				$body.removeClass('is-loading');
+			}, 100);
+		});
 
 		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
-			});
+		skel.on('+medium -medium', function () {
+			$.prioritize(
+				'.important\\28 medium\\29',
+				skel.breakpoint('medium').active
+			);
+		});
 
 		// Gallery.
-			$('.gallery').poptrox();
+		$('.gallery').poptrox();
 
 	});
 
